@@ -250,7 +250,7 @@ export function params(type: string, rules?: RuleOptions) {
     }
     descriptor.value = doValidate;
     
-    _params(type)(rulesToProperties(rules || {}))(target, name, descriptor);
+    _params(type)(rulesToProperties(rules || {}))(target, propertyKey, descriptor);
     return descriptor;
   }  
 }
@@ -357,7 +357,7 @@ export function queryWithPager(rules?: RuleOptions, throwError?:boolean) {
     _params('query')(rulesToProperties({
       ...rules,
       ...queryValidationRule,
-    } || {}))(target, name, descriptor);
+    } || {}))(target, propertyKey, descriptor);
     return descriptor;
   }
 }

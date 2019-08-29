@@ -1,2 +1,2 @@
-export { default as router } from "./routerWrapper";
+export { default as routerWrapper } from "./routerWrapper";
 export * from './wrappers';
