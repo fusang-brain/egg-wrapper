@@ -1,0 +1,30 @@
+{
+  "name": "@fsba/egg-wrapper",
+  "version": "1.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "start": "tsc -w",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "version": "git add -A src",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.138",
+    "egg": "^2.23.0",
+    "egg-swagger-decorator": "^0.1.2"
+  }
+}
