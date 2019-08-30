@@ -2,11 +2,13 @@ import { Application, Context, Controller } from 'egg';
 import { ServiceError, ValidateError } from './exceptions';
 import { 
   params as _params,
+  request as _request,
 } from 'egg-swagger-decorator';
 
 
 import { 
   responses as _responses,
+  summary as _summary,
   tags as _tags 
 } from 'egg-swagger-decorator';
 
@@ -14,8 +16,8 @@ export {
   desc,
   formData,
   description,
-  request,
-  summary,
+  // request,
+  // summary,
 } from 'egg-swagger-decorator';
 
 export type TypeOptions = ('mobile'|'string'|'int'|'integer'|'number'|'date'|'dateTime'|'datetime'|'id'|'boolean'|'ObjectId'|'bool'|'string'|'email'|'password'|'url'|'enum'|'object'|'array');
@@ -272,6 +274,12 @@ export const path = (rules?: RuleOptions) => params('query', rules);
  * @param rules 
  */
 export const body = (rules?: RuleOptions) => params('query', rules);
+
+type RequestMethod = ('get'|'post'|'put'|'delete'|'options'|'head'|'trace'|'connect')
+
+export const request = (method: RequestMethod, path: string) => _request(method.toUpperCase(), path);
+
+export const summary = (msg: string) => _summary(msg);
 
 /**
  * 查询字符串信息校验
