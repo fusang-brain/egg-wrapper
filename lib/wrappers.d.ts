@@ -1,4 +1,4 @@
-export { desc, formData, description, request, summary, } from 'egg-swagger-decorator';
+export { desc, formData, description, } from 'egg-swagger-decorator';
 export declare type TypeOptions = ('mobile' | 'string' | 'int' | 'integer' | 'number' | 'date' | 'dateTime' | 'datetime' | 'id' | 'boolean' | 'ObjectId' | 'bool' | 'string' | 'email' | 'password' | 'url' | 'enum' | 'object' | 'array');
 export interface FieldRule {
     type?: TypeOptions;
@@ -71,6 +71,8 @@ export declare const path: (rules?: RuleOptions | undefined) => (target: any, pr
  * @param rules
  */
 export declare const body: (rules?: RuleOptions | undefined) => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor;
+export declare const request: (method: "head" | "get" | "connect" | "post" | "put" | "delete" | "options" | "trace", path: string) => (target: any, name: any, descriptor: any) => any;
+export declare const summary: (msg: string) => (target: any, name: any, descriptor: any) => any;
 /**
  * 查询字符串信息校验
  */
