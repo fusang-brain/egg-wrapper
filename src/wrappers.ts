@@ -267,13 +267,13 @@ export const query = (rules?: RuleOptions) => params('query', rules);
  * 通过 {rules} 验证 path 并生成文档
  * @param rules 
  */
-export const path = (rules?: RuleOptions) => params('query', rules);
+export const path = (rules?: RuleOptions) => params('path', rules);
 
 /**
  * 通过 {rules} 验证 body 并生成文档
  * @param rules 
  */
-export const body = (rules?: RuleOptions) => params('query', rules);
+export const body = (rules?: RuleOptions) => params('body', rules);
 
 type RequestMethod = ('get'|'post'|'put'|'delete'|'options'|'head'|'trace'|'connect')
 
