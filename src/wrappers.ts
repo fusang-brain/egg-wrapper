@@ -3,6 +3,7 @@ import { ServiceError, ValidateError } from './exceptions';
 import { 
   params as _params,
   request as _request,
+  
 } from 'egg-swagger-decorator';
 
 
@@ -16,6 +17,7 @@ export {
   desc,
   formData,
   description,
+  apiObjects,
   // request,
   // summary,
 } from 'egg-swagger-decorator';
@@ -253,6 +255,7 @@ export function params(type: string, rules?: RuleOptions) {
     descriptor.value = doValidate;
     
     _params(type)(rulesToProperties(rules || {}))(target, propertyKey, descriptor);
+    // console.log('apiObjects', apiObjects);
     return descriptor;
   }  
 }
